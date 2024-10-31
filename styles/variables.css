@@ -1,4 +1,11 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --menu-color: rgba(255, 0, 112, 1);
+  --title-color: rgba(219, 0, 255, 1);
+  --accent-color: var(--menu-color);
+  --title-text-color: rgba(0, 0, 40, 1);
+  --text-color: rgba(241, 178, 206, 1);
+  
+  --middle-transition-point: 767px;
+  --final-transition-point: 375px;
+  --global-padding: clamp(10px, calc((100vw - var(--middle-transition-point)) * 1000), 20px); /* 375px */
+}

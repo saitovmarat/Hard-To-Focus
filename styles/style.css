@@ -1,5 +1,233 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: url("../images/cover-image-dark.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-areas:
+    "menu"
+    "title"
+    "text";
+  align-items: start;
+  min-height: 100vh;
+  padding: var(--global-padding);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--accent-color);
+  border-width: 1px 1px 0 0;
+  inset-block-start: var(--global-padding);
+  inset-inline-end: var(--global-padding);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--accent-color);
+  border-width: 0 0 1px 1px;
+  inset-block-end: var(--global-padding);
+  inset-inline-start: var(--global-padding);
+}
+
+.header__decoration {
+  position: absolute;
+  top: var(--global-padding);
+  right: clamp(
+    19px,
+    calc((100vw - var(--middle-transition-point)) * 1000),
+    29px
+  ); /* 375px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color);
+  font-family: IBM Plex Mono;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.header__decoration::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
+  background-color: var(--accent-color);
+}
+
+.header__theme-menu {
+  grid-area: menu;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 1.5px 13px;
+  color: var(--menu-color);
+  font-family: IBM Plex Mono;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--menu-color);
+}
+
+.header__title {
+  grid-area: title;
+  margin-inline-start: -20px;
+  color: var(--title-color);
+  font-family: IBM Plex Mono;
+  font-weight: 700;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
+  line-height: clamp(6.1875rem, 0.4631rem + 11.9258vw, 8.095625rem);;
+  text-align: left;
+  text-shadow: 4px 4px 0px var(--accent-color);
+}
+
+.title-decor {
+  color: var(--title-text-color);
+  font-family: IBM Plex Mono;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  text-align: left;
+  background-color: var(--accent-color);
+}
+
+.header__description {
+  grid-area: text;
+  justify-self: end;
+  align-self: center;
+  max-width: calc(50vw - 20px);
+  /* margin-block-end: var(--global-padding); */
+}
+
+.main {
+  margin: 60px var(--global-padding) 0; /**/ 
+}
+
+.reasons {
+  display: grid;
+  grid-template-columns: clamp(14.75rem, -0.0625rem + 30.8594vw, 19.6875rem) 1fr;
+  gap: 20px;
+}
+
+.section__title-text {
+  color: var(--menu-color);
+  font-family: IBM Plex Mono;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  text-align: left;
+  text-align: left;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.reasons > .cards {
+  flex-direction: column;
+}
+
+.card {
+  flex: 1;
+}
+
+.card__title {
+  margin-block-end: 10px;
+}
+
+.card__text {
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.factors {
+  margin-block-start: 80px;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 20px;
+}
+
+.factors > .section__title {
+  max-width: clamp(14.75rem, -0.0625rem + 30.8594vw, 19.6875rem);
+}
+
+.factors > .cards {
+  flex-direction: row;
+}
+
+@media (width < 1024px) {
+  .header__theme-menu-list {
+    flex-direction: column;
+  }
+
+  .header__theme-menu {
+    justify-items: flex-end;
+    align-self: center;
+  }
+
+  .factors > .cards {
+    flex-direction: column;
+  }
+}
+
+@media (width < 768px) {
+  .header__title {
+    margin-inline-start: 0;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    line-height: clamp(5.98125rem, 5.7844rem + 0.8397vw, 6.1875rem);
+  }
+  .header__description {
+    max-width: 100%;
+  }
+
+  .main {
+    margin-block-start: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem);
+  }
+
+  .reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .factors {
+    margin-block-start: clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
+  }
+  
+  .factors > .section__title {
+    max-width: 100%;
+  }
+  
 }

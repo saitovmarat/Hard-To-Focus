@@ -1,12 +1,31 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+.theme_light {
+  --menu-color: rgba(53, 52, 48, 1);
+  --title-color: rgba(255, 194, 230, 1);
+  --accent-color: rgba(255, 141, 203, 1);
+  --title-text-color: rgba(53, 52, 48, 1);
+  --text-color: rgba(53, 52, 48, 1);
 
-.page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  background-image: url('../images/cover-image-light.png');
+}
+
+.theme_light .header__decoration {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --menu-color: rgba(53, 52, 48, 1);
+    --title-color: rgba(255, 194, 230, 1);
+    --accent-color: rgba(255, 141, 203, 1);
+    --title-text-color: rgba(53, 52, 48, 1);
+    --text-color: rgba(53, 52, 48, 1);
+  }
+
+  .page {
+    background-image: url('../images/cover-image-light.png');
+  }
+  
+  .header__decoration {
+    display: none;
+  }
 }
