@@ -91,6 +91,15 @@
   cursor: pointer;
 }
 
+.header__theme-menu-button:hover {
+  outline: 1px solid currentColor;
+}
+
+.header__theme-menu-button:focus-visible{
+  outline: none;
+  border-bottom: 1px solid currentColor; 
+}
+
 .header__theme-menu-button_active {
   outline: 1px solid var(--menu-color);
 }

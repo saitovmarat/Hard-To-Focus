@@ -40,3 +40,11 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
+
+a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+a:focus-visible {
+  outline: 1px solid currentColor;
+}
