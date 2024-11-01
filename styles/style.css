@@ -96,8 +96,8 @@
 }
 
 .header__theme-menu-button:focus-visible{
-  outline: none;
-  border-bottom: 1px solid currentColor; 
+  border-bottom: 1px solid currentColor;
+  outline: none; 
 }
 
 .header__theme-menu-button_active {
@@ -167,10 +167,9 @@
 
 .card__title {
   margin-block-end: 10px;
-  font-weight: 400;
   font-family: IBM Plex Mono;
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   line-height: 23.4px;
   text-align: left;
 }
