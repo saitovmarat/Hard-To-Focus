@@ -8,3 +8,16 @@
   background-image: url('../images/cover-image-dark.png');
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --menu-color: rgba(255, 0, 112, 1);
+    --title-color: rgba(219, 0, 255, 1);
+    --accent-color: var(--menu-color);
+    --title-text-color: rgba(0, 0, 40, 1);
+    --text-color: rgba(241, 178, 206, 1);
+  }
+
+  .theme_auto.page {
+    background-image: url('../images/cover-image-dark.png');
+  }
+}

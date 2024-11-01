@@ -21,11 +21,11 @@
     --text-color: rgba(53, 52, 48, 1);
   }
 
-  .page {
+  .theme_auto.page {
     background-image: url('../images/cover-image-light.png');
   }
   
-  .header__decoration {
+  .theme_auto .header__decoration {
     display: none;
   }
 }
