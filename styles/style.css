@@ -104,15 +104,18 @@
   outline: 1px solid var(--menu-color);
 }
 
-.header__title {
-  grid-area: title;
-  margin-inline-start: -20px;
+.logo {
   color: var(--title-color);
   font-family: IBM Plex Mono;
   font-weight: 700;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: clamp(6.1875rem, 0.4631rem + 11.9258vw, 8.095625rem);
   text-align: left;
+}
+
+.header__title {
+  grid-area: title;
+  margin-inline-start: -20px;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
@@ -141,13 +144,16 @@
   margin-block-start: var(--global-section-gap);
 }
 
-.reasons {
+.section {
   display: grid;
-  grid-template-columns: clamp(14.75rem, -0.0625rem + 30.8594vw, 19.6875rem) 1fr;
   gap: 20px;
 }
 
-.section__title-text {
+.reasons {
+  grid-template-columns: clamp(14.75rem, -0.0625rem + 30.8594vw, 19.6875rem) 1fr;
+}
+
+.section__title {
   color: var(--menu-color);
   font-family: IBM Plex Mono;
   font-weight: 700;
@@ -161,7 +167,7 @@
   gap: 20px;
 }
 
-.reasons > .cards {
+.section > .cards {
   flex-direction: column;
 }
 
@@ -190,9 +196,7 @@
 }
 
 .factors {
-  display: grid;
   grid-template-rows: min-content 1fr;
-  gap: 20px;
 }
 
 .factors > .section__title {
@@ -205,17 +209,11 @@
 }
 
 .how_to {
-  display: grid;
   grid-template-columns: clamp(14.75rem, -0.0625rem + 30.8594vw, 19.6875rem) 1fr;
-  gap: 20px;
 }
 
 .bold-text {
   font-weight: 700;
-}
-
-.how_to > .cards {
-  flex-direction: column;
 }
 
 .how_to > .cards > .card:first-child > .card__title {
@@ -225,10 +223,9 @@
 .gallery {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
-.gallery > .section__title > .card__title {
+.gallery > .card__title {
   margin-block-end: 0;
 }
 
@@ -267,12 +264,6 @@
 }
 
 .footer__title {
-  color: var(--title-color);
-  font-family: IBM Plex Mono;
-  font-weight: 700;
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  line-height: clamp(6.1875rem, 0.4631rem + 11.9258vw, 8.095625rem);
-  text-align: left;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -299,6 +290,9 @@
 
   .header__title {
     margin-inline-start: 0;
+  }
+
+  .logo {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     line-height: clamp(5.98125rem, 5.7844rem + 0.8397vw, 6.1875rem);
   }
@@ -312,7 +306,8 @@
     margin-block-end: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem);
   }
 
-  .reasons {
+  .reasons, 
+  .how_to {
     grid-template-columns: 1fr;
   }
 
@@ -320,17 +315,8 @@
     max-width: 100%;
   }
 
-  .how_to {
-    grid-template-columns: 1fr;
-  }
-
   .gallery {
     gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-  }
-
-  .footer__title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    line-height: clamp(5.98125rem, 5.7844rem + 0.8397vw, 6.1875rem);
   }
 }
 
