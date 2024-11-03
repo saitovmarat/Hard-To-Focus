@@ -1,12 +1,20 @@
 :root {
+  --global-font-family: "IBM Plex Mono", monospace;
+
   --menu-color: rgba(255, 0, 112, 1);
   --title-color: rgba(219, 0, 255, 1);
   --accent-color: var(--menu-color);
   --title-text-color: rgba(0, 0, 40, 1);
   --text-color: rgba(241, 178, 206, 1);
-  
-  --middle-transition-point: 500px;
-  --main-vertical-margin: clamp(40px, calc((100vw - 375px) * 1000), 60px);
-  --global-section-gap: clamp(50px, calc((100vw - var(--middle-transition-point)) * 1000), 80px);
-  --global-padding: clamp(10px, calc((100vw - var(--middle-transition-point)) * 1000), 20px);
+
+  --bg-image: url('../images/cover-image-dark.png');
+  --bg-color: #000028;
+  --header-decoration-element-display: flex;
+
+  --global-section-gap: clamp(50px, calc((100vw - 500px) * 1000), 80px);
+  --global-padding: clamp(10px, calc((100vw - 500px) * 1000), 20px);
+
+  --menu-button-hover-border-color: rgba(255, 0, 112, 0.4);
+
+
 }
